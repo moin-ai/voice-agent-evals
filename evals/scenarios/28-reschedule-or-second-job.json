@@ -1,0 +1,38 @@
+{
+  "id": "reschedule-or-second-job",
+  "description": "Ambiguous version of the 2026-08-19 call: the caller only says 'I need Saturday instead', which could mean move the existing job or book a second one. Guessing produces either a duplicate or a wrongly deleted job (prompt.ts's own 'Changing an existing booking' section), so the agent must ask which before calling book_appointment, reschedule_appointment or cancel_appointment.",
+  "settings": {
+    "hours": {
+      "mon": { "open": "08:00", "close": "17:00" },
+      "tue": { "open": "08:00", "close": "17:00" },
+      "wed": { "open": "08:00", "close": "17:00" },
+      "thu": { "open": "08:00", "close": "17:00" },
+      "fri": { "open": "08:00", "close": "17:00" },
+      "sat": { "open": "09:00", "close": "14:00" }
+    }
+  },
+  "existing": [
+    {
+      "id": "c7a2c1e3-7c1b-4d2b-8d3b-2b3c4d5e6f70",
+      "starts_at": "2026-08-19T14:00:00Z",
+      "ends_at": "2026-08-19T16:00:00Z",
+      "service_type": "Water heater repair",
+      "address": "88 Birch St, Austin"
+    }
+  ],
+  "caller": {
+    "opening": "Hey, it's Morgan Blake — I need Saturday instead.",
+    "persona": "Morgan Blake, who has a water heater repair booked for Wednesday at 88 Birch St, Austin. Deliberately vague on the opening line — never volunteers whether this is the existing job moving or a new one.",
+    "facts": {
+      "name": "Morgan Blake",
+      "address": "88 Birch St, Austin",
+      "existing appointment": "water heater repair, this Wednesday"
+    },
+    "goal": "Only say it's the same Wednesday job being moved if the agent directly asks whether this is that job or a different one. Do not volunteer that on your own, and do not ask for a second appointment yourself. Once it's clear which job is being changed, accept whichever Saturday window is offered.",
+    "maxTurns": 10
+  },
+  "checks": [
+    { "type": "asksBeforeActingOnAmbiguity" },
+    { "type": "bookingCountUnchanged" }
+  ]
+}

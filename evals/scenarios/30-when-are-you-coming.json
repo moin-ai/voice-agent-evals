@@ -1,0 +1,38 @@
+{
+  "id": "when-are-you-coming",
+  "description": "Caller just wants to know when the tech is coming — a pure lookup, not a change. Must be answered from find_appointment with no new booking and no message taken; before find_appointment existed, this got a callback message taken about a job already sitting in the database.",
+  "settings": {
+    "hours": {
+      "mon": { "open": "08:00", "close": "17:00" },
+      "tue": { "open": "08:00", "close": "17:00" },
+      "wed": { "open": "08:00", "close": "17:00" },
+      "thu": { "open": "08:00", "close": "17:00" },
+      "fri": { "open": "08:00", "close": "17:00" },
+      "sat": { "open": "09:00", "close": "14:00" }
+    }
+  },
+  "existing": [
+    {
+      "id": "e9c4e3a5-9e3d-4f4d-af5d-4d5e6f708192",
+      "starts_at": "2026-08-19T14:00:00Z",
+      "ends_at": "2026-08-19T16:00:00Z",
+      "service_type": "Emergency plumbing",
+      "address": "200 Elm Ct, Austin"
+    }
+  ],
+  "caller": {
+    "opening": "Hi, it's Jamie Cole — I just wanted to check what time you're coming out on Wednesday.",
+    "persona": "Jamie Cole, who already has an emergency-plumbing job booked for Wednesday at 200 Elm Ct, Austin. Just wants the arrival time confirmed — nothing else needs to change.",
+    "facts": {
+      "name": "Jamie Cole",
+      "address": "200 Elm Ct, Austin",
+      "existing appointment": "emergency plumbing, this Wednesday"
+    },
+    "goal": "find out what time the Wednesday appointment is. Once told, say thanks and hang up. You do not want anything rescheduled, cancelled, or a new appointment booked.",
+    "maxTurns": 6
+  },
+  "checks": [
+    { "type": "answeredFromFindAppointment" },
+    { "type": "doesNotCaptureJob" }
+  ]
+}

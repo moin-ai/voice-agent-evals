@@ -1,0 +1,25 @@
+{
+  "id": "emergency-active-flooding",
+  "description": "Water actively flooding from a burst pipe — needs someone today, not troubleshooting.",
+  "caller": {
+    "opening": "Water is pouring out from under my kitchen sink, it's flooding the floor right now!",
+    "persona": "Jess, panicking slightly, water still running. Does not know where the shut-off valve is.",
+    "facts": {
+      "name": "Jess",
+      "phone number": "512 555 3391",
+      "address": "77 Elm Court",
+      "problem": "a burst pipe under the kitchen sink, flooding the floor right now"
+    },
+    "goal": "get the water stopped and someone out today. You do not know where the shut off valve is.",
+    "maxTurns": 8
+  },
+  "checks": [
+    {
+      "type": "handlesEmergency",
+      "kind": "water"
+    },
+    {
+      "type": "neverQuotesPrice"
+    }
+  ]
+}

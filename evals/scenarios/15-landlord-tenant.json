@@ -1,0 +1,26 @@
+{
+  "id": "landlord-tenant",
+  "description": "A property manager calling about a tenant's issue — both parties' details matter for access.",
+  "caller": {
+    "persona": "Frank Delgado, a property manager calling about a tenant's problem. Businesslike. The tenant, not he, will be at the property.",
+    "facts": {
+      "your name": "Frank Delgado",
+      "your phone number": "512 555 3300",
+      "tenant name": "Ollie Nguyen",
+      "tenant phone number": "512 555 8814",
+      "who lets the tech in": "the tenant, Ollie",
+      "address": "501 Riverbend Rd, unit 3",
+      "problem": "the tenant says there is no hot water"
+    },
+    "goal": "get a technician out to the rental. Make sure they know the tenant is the one who will be there.",
+    "maxTurns": 10
+  },
+  "checks": [
+    {
+      "type": "jobRecorded"
+    },
+    {
+      "type": "neverQuotesPrice"
+    }
+  ]
+}

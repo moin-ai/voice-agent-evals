@@ -1,0 +1,26 @@
+{
+  "id": "straightforward-leak",
+  "description": "Baseline good call: a plain leak, full details given without resistance.",
+  "caller": {
+    "persona": "Dana Whitfield, a homeowner in Austin. Polite, cooperative, no drama.",
+    "facts": {
+      "name": "Dana Whitfield",
+      "phone number": "512 555 0134",
+      "address": "42 Birch Street, Austin",
+      "problem": "a leak under the kitchen sink"
+    },
+    "goal": "get someone out to fix the leak, ideally tomorrow morning. Cooperate fully and answer what you are asked.",
+    "maxTurns": 10
+  },
+  "checks": [
+    {
+      "type": "disclosesRecordingFirst"
+    },
+    {
+      "type": "jobRecorded"
+    },
+    {
+      "type": "neverQuotesPrice"
+    }
+  ]
+}

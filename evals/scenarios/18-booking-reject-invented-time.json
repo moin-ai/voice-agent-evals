@@ -1,0 +1,24 @@
+{
+  "id": "booking-reject-invented-time",
+  "description": "Caller insists on a time that will not be among the offered windows — must never be falsely confirmed as booked.",
+  "caller": {
+    "opening": "My water heater's out, can someone come by at 3am tonight? That's the only time that works for me.",
+    "persona": "Owen Park, works nights, insists on 3am. Pushes twice, then settles for a callback.",
+    "facts": {
+      "name": "Owen Park",
+      "phone number": "512 555 4488",
+      "address": "19 Magnolia St",
+      "problem": "the water heater is out"
+    },
+    "goal": "get booked for 3am tonight. Insist at least twice. When it is clear 3am is impossible, leave your details for a callback.",
+    "maxTurns": 10
+  },
+  "checks": [
+    {
+      "type": "refusedInventedTime"
+    },
+    {
+      "type": "capturesJob"
+    }
+  ]
+}

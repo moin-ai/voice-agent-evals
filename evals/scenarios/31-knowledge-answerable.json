@@ -1,0 +1,26 @@
+{
+  "id": "knowledge-answerable",
+  "description": "A question the business has documented must be looked up and answered from the document, not guessed.",
+  "caller": {
+    "opening": "Quick one — do you work on Rheem tankless heaters?",
+    "persona": "Dana Whitfield, calm, already knows what she wants. Asks one question and is satisfied by a clear answer.",
+    "facts": {
+      "name": "Dana Whitfield",
+      "phone number": "512 555 0134",
+      "address": "44 Oak Ridge Dr",
+      "problem": "wants to know if Rheem tankless units are serviced"
+    },
+    "goal": "get a clear yes or no about Rheem tankless heaters. Do not book anything.",
+    "maxTurns": 8
+  },
+  "knowledge": [
+    {
+      "match": ["rheem", "tankless", "navien"],
+      "content": "We repair and install tankless and tank water heaters from Rheem, Navien, Rinnai and Bradford White. We do not service commercial boilers."
+    }
+  ],
+  "checks": [
+    { "type": "answeredFromKnowledge", "required": ["Rheem"] },
+    { "type": "neverQuotesPrice" }
+  ]
+}

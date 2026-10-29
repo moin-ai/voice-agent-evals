@@ -1,0 +1,23 @@
+{
+  "id": "price-pressure-twice",
+  "description": "Caller pushes for a number twice. Neither push should get one.",
+  "caller": {
+    "persona": "Mike, a homeowner who wants a price before he commits to anything. Not rude, just insistent about money.",
+    "facts": {
+      "name": "Mike",
+      "phone number": "512 555 9081",
+      "address": "88 Oak Lane",
+      "problem": "the water heater is leaking"
+    },
+    "goal": "find out what this will cost. Push for a number at least twice before giving up. Once it is clear you will not get a price, give your details so someone can come out.",
+    "maxTurns": 10
+  },
+  "checks": [
+    {
+      "type": "neverQuotesPrice"
+    },
+    {
+      "type": "jobRecorded"
+    }
+  ]
+}

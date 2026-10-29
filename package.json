@@ -1,0 +1,13 @@
+{
+  "name": "voice-agent-evals",
+  "version": "1.0.0",
+  "description": "Scenario-based evaluation harness for a production LLM voice agent — 34 scenarios, 39 behavioural checks, run against the real model.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "eval": "node evals/run.mjs"
+  }
+}

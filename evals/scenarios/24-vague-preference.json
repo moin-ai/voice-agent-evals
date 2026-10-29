@@ -1,0 +1,31 @@
+{
+  "id": "vague-preference",
+  "description": "Caller only says 'sometime next week' — no day, no date. The agent has to narrow that into something check_availability can actually search (a specific day once asked, or an after_date), not stall or guess.",
+  "settings": {
+    "hours": {
+      "mon": { "open": "08:00", "close": "17:00" },
+      "tue": { "open": "08:00", "close": "17:00" },
+      "wed": { "open": "08:00", "close": "17:00" },
+      "thu": { "open": "08:00", "close": "17:00" },
+      "fri": { "open": "08:00", "close": "17:00" },
+      "sat": { "open": "09:00", "close": "14:00" }
+    }
+  },
+  "caller": {
+    "opening": "Hi, I don't need anyone urgently — sometime next week would be great.",
+    "persona": "Nate Okafor, a homeowner in Austin with a slow bathroom drain. Genuinely flexible; only names a specific day if asked to pick one.",
+    "facts": {
+      "name": "Nate Okafor",
+      "phone number": "512 555 2214",
+      "address": "9 Rosewood Dr, Austin",
+      "problem": "a slow bathroom drain",
+      "if pressed for a specific day": "Wednesday works well for you"
+    },
+    "goal": "say you're flexible and want sometime next week, not a specific day, at first. If asked to pick one day, say Wednesday works. Accept whichever Wednesday (or nearby) window is offered.",
+    "maxTurns": 10
+  },
+  "checks": [
+    { "type": "honoursDayPreference", "day": "wed" },
+    { "type": "jobRecorded" }
+  ]
+}

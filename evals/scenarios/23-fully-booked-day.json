@@ -1,0 +1,34 @@
+{
+  "id": "fully-booked-day",
+  "description": "Caller asks for Saturday, but every Saturday window in the horizon is already in `existing` — both 2026-08-15 and 2026-08-22 are blocked solid, nothing else is. The agent must still call check_availability (not assume) and the job must land somewhere.",
+  "settings": {
+    "hours": {
+      "mon": { "open": "08:00", "close": "17:00" },
+      "tue": { "open": "08:00", "close": "17:00" },
+      "wed": { "open": "08:00", "close": "17:00" },
+      "thu": { "open": "08:00", "close": "17:00" },
+      "fri": { "open": "08:00", "close": "17:00" },
+      "sat": { "open": "09:00", "close": "14:00" }
+    }
+  },
+  "existing": [
+    { "starts_at": "2026-08-15T14:00:00Z", "ends_at": "2026-08-15T19:00:00Z" },
+    { "starts_at": "2026-08-22T14:00:00Z", "ends_at": "2026-08-22T19:00:00Z" }
+  ],
+  "caller": {
+    "opening": "Do you have anything this Saturday?",
+    "persona": "Marisol Reyes, a homeowner in Austin with a running toilet. Would like Saturday but will take a weekday if that's really all there is.",
+    "facts": {
+      "name": "Marisol Reyes",
+      "phone number": "512 555 8845",
+      "address": "77 Comal St, Austin",
+      "problem": "a running toilet"
+    },
+    "goal": "ask about Saturday. If you're told Saturday is full, accept whichever alternative day is offered. If nothing is offered at all, leave your name and number for a callback.",
+    "maxTurns": 10
+  },
+  "checks": [
+    { "type": "neverClaimsUnavailableWithoutChecking" },
+    { "type": "jobRecorded" }
+  ]
+}

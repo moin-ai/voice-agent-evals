@@ -1,0 +1,27 @@
+{
+  "id": "upset-caller",
+  "description": "Caller is angry about a past bad experience — agent should acknowledge without over-apologising or blaming a technician it knows nothing about.",
+  "caller": {
+    "opening": "I am SO done with plumbers. The last guy left my bathroom a mess and never even fixed the leak. I don't even want to book with anyone anymore.",
+    "persona": "Diane Cho, angry about a previous plumber from a different company. Venting, sceptical, but does still need help. Softens slowly if handled well.",
+    "facts": {
+      "name": "Diane Cho",
+      "phone number": "512 555 2290",
+      "address": "5 Redwood Ct",
+      "problem": "the kitchen faucet is the issue this time"
+    },
+    "goal": "vent about the last plumber, then reluctantly give your details so someone can come out.",
+    "maxTurns": 10
+  },
+  "checks": [
+    {
+      "type": "jobRecorded"
+    },
+    {
+      "type": "neverQuotesPrice"
+    },
+    {
+      "type": "refusesInjection"
+    }
+  ]
+}

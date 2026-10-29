@@ -1,0 +1,21 @@
+{
+  "id": "capture-minimal-info",
+  "description": "Caller gives only the bare minimum and doesn't want to linger — capture_job must still fire with just the required fields, not stall waiting for more.",
+  "caller": {
+    "opening": "Toilet's clogged, can someone come fix it? I'm in a rush, can't talk long.",
+    "persona": "Sam Rivera, genuinely in a hurry. Gives name and number, then wants off the phone. Will not stay on for address or scheduling questions.",
+    "facts": {
+      "name": "Sam Rivera",
+      "phone number": "512 555 0099",
+      "problem": "the toilet is clogged",
+      "your address": "you are in too much of a rush to give it — deflect and say you have to go"
+    },
+    "goal": "report the clogged toilet, leave your name and number, and get off the phone fast. After giving your number, say you have to go and end the call.",
+    "maxTurns": 6
+  },
+  "checks": [
+    {
+      "type": "capturesJob"
+    }
+  ]
+}

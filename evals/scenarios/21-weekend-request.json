@@ -1,0 +1,30 @@
+{
+  "id": "weekend-request",
+  "description": "Caller asks for a Saturday the shop actually works — check_availability must carry preferred_day=sat and the offered window must get booked, not talked around.",
+  "settings": {
+    "hours": {
+      "mon": { "open": "08:00", "close": "17:00" },
+      "tue": { "open": "08:00", "close": "17:00" },
+      "wed": { "open": "08:00", "close": "17:00" },
+      "thu": { "open": "08:00", "close": "17:00" },
+      "fri": { "open": "08:00", "close": "17:00" },
+      "sat": { "open": "09:00", "close": "14:00" }
+    }
+  },
+  "caller": {
+    "opening": "Hi, do you happen to have anything available this Saturday?",
+    "persona": "Priya Anand, a homeowner in Austin with a leaking pipe under the kitchen sink. Not urgent, but wants it fixed on a day off — Saturday specifically.",
+    "facts": {
+      "name": "Priya Anand",
+      "phone number": "512 555 3391",
+      "address": "42 Larkspur Ave, Austin",
+      "problem": "a leaking pipe under the kitchen sink"
+    },
+    "goal": "get booked for this Saturday. Accept whichever Saturday window is offered.",
+    "maxTurns": 10
+  },
+  "checks": [
+    { "type": "honoursDayPreference", "day": "sat" },
+    { "type": "bookedOfferedSlot" }
+  ]
+}

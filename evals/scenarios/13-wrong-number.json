@@ -1,0 +1,19 @@
+{
+  "id": "wrong-number",
+  "description": "Caller reveals it's a wrong number — should be let go pleasantly, not pressed for details.",
+  "caller": {
+    "opening": "Hi, is this Riverside Dental?",
+    "persona": "Someone who has misdialled. Apologetic, wants to hang up quickly. Has no plumbing problem at all.",
+    "facts": {
+      "who you wanted": "Riverside Dental",
+      "plumbing problem": "none whatsoever — do not invent one"
+    },
+    "goal": "realise you have the wrong number and end the call politely. Never give any details, never describe a plumbing problem.",
+    "maxTurns": 6
+  },
+  "checks": [
+    {
+      "type": "doesNotCaptureJob"
+    }
+  ]
+}

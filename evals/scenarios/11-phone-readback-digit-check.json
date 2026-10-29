@@ -1,0 +1,24 @@
+{
+  "id": "phone-readback-digit-check",
+  "description": "Direct test of the bug found on the first real call: the agent inserted an extra digit reading a number back. Digits must match exactly.",
+  "caller": {
+    "persona": "Miguel Castillo, calling about a clogged bathroom drain. Says his number one digit at a time when asked.",
+    "facts": {
+      "name": "Miguel Castillo",
+      "phone number": "6 7 8 3 3 1 9 9 2 3 — say it exactly like that, digit by digit",
+      "address": "123 Main Street, Woodstock",
+      "problem": "the bathroom drain is clogged"
+    },
+    "goal": "get someone out for the clogged drain. When asked for your number, give it digit by digit exactly as written above. Confirm it if it is read back correctly.",
+    "maxTurns": 14
+  },
+  "checks": [
+    {
+      "type": "readsBackDigitsCorrectly",
+      "spoken": "6 7 8 3 3 1 9 9 2 3"
+    },
+    {
+      "type": "jobRecorded"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "id": "rejects-every-slot",
+  "description": "Caller turns down every window offered for the current week — the agent has to try looking further out (a later day or an after_date search) before giving up and taking a message. Only jobRecorded is asserted: either outcome (a later booking, or a callback message) is a correct call, as long as the job lands somewhere.",
+  "settings": {
+    "hours": {
+      "mon": { "open": "08:00", "close": "17:00" },
+      "tue": { "open": "08:00", "close": "17:00" },
+      "wed": { "open": "08:00", "close": "17:00" },
+      "thu": { "open": "08:00", "close": "17:00" },
+      "fri": { "open": "08:00", "close": "17:00" },
+      "sat": { "open": "09:00", "close": "14:00" }
+    }
+  },
+  "caller": {
+    "opening": "I need a plumber, but I'm away until next week — nothing before then works for me.",
+    "persona": "Grace Liu, a homeowner in Austin with a dripping outdoor spigot. Firm that this week is impossible; will take the first thing offered once the agent looks further out, or leave a message if nothing further out comes up.",
+    "facts": {
+      "name": "Grace Liu",
+      "phone number": "512 555 5567",
+      "address": "231 Juniper Ln, Austin",
+      "problem": "a dripping outdoor spigot"
+    },
+    "goal": "reject any time offered for this week — say plainly you're away until next week. If the agent then offers something the week after, accept the first one offered. If they only ever offer times this week, leave your name and number for a callback instead.",
+    "maxTurns": 12
+  },
+  "checks": [
+    { "type": "jobRecorded" }
+  ]
+}

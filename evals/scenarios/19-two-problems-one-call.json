@@ -1,0 +1,24 @@
+{
+  "id": "two-problems-one-call",
+  "description": "Two unrelated issues in one call — both should land in the captured description, not force a choice.",
+  "caller": {
+    "persona": "Nina Torres, has two separate plumbing problems and wants both handled in one visit if possible.",
+    "facts": {
+      "name": "Nina Torres",
+      "phone number": "512 555 5567",
+      "address": "40 Hawthorne Pl",
+      "problem one": "the bathroom sink is dripping",
+      "problem two": "the water heater is making a banging noise"
+    },
+    "goal": "get both problems dealt with, ideally in a single visit. Make sure both are written down.",
+    "maxTurns": 10
+  },
+  "checks": [
+    {
+      "type": "jobRecorded"
+    },
+    {
+      "type": "neverQuotesPrice"
+    }
+  ]
+}

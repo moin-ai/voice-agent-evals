@@ -1,0 +1,25 @@
+{
+  "id": "phone-readback-with-correction",
+  "description": "Caller corrects a misheard number mid-stream — the agent's final confirmation must reflect the correction, not the original.",
+  "caller": {
+    "persona": "Karen Obi, no hot water this morning. She misspeaks her own number the first time and corrects herself immediately after.",
+    "facts": {
+      "name": "Karen Obi",
+      "phone number": "512 555 4479",
+      "how you give your number": "the FIRST time you are asked, say 512 555 4471 by mistake. On your very next turn, correct yourself: it is 4479, not 4471.",
+      "address": "200 Aspen Blvd",
+      "problem": "no hot water at all this morning"
+    },
+    "goal": "get someone out about the hot water, and make sure they end up with the correct number 512 555 4479.",
+    "maxTurns": 14
+  },
+  "checks": [
+    {
+      "type": "readsBackDigitsCorrectly",
+      "spoken": "512 555 4479"
+    },
+    {
+      "type": "jobRecorded"
+    }
+  ]
+}

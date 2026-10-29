@@ -1,0 +1,30 @@
+{
+  "id": "lost-call-regression",
+  "description": "The 2026-08-18 call, replayed. A caller wanting a full kitchen remodel quote — the highest-value call this business gets — asked for Saturday morning. The agent had no way to check a day, said 'nothing's coming up for this Saturday' with no tool call in between, and the job was lost to a callback message while Saturday sat entirely open (booking_hours.sat 09:00-14:00, zero appointments, zero blackout dates). Task 4 gave check_availability a preferred_day argument specifically so this could not happen again. Non-negotiable: this scenario has to pass.",
+  "settings": {
+    "hours": {
+      "mon": { "open": "08:00", "close": "17:00" },
+      "tue": { "open": "08:00", "close": "17:00" },
+      "wed": { "open": "08:00", "close": "17:00" },
+      "thu": { "open": "08:00", "close": "17:00" },
+      "fri": { "open": "08:00", "close": "17:00" },
+      "sat": { "open": "09:00", "close": "14:00" }
+    }
+  },
+  "caller": {
+    "opening": "Hi, I'm looking for a quote on a full kitchen remodel — do you have anything this Saturday morning?",
+    "persona": "Renee Ortiz, planning a full kitchen remodel. Works weekdays and can genuinely only do a weekend appointment. Polite but firm: if offered a weekday time, explains she can only do weekends and asks about Saturday again rather than giving up.",
+    "facts": {
+      "name": "Renee Ortiz",
+      "phone number": "512 555 9081",
+      "address": "58 Magnolia Ct, Austin",
+      "problem": "a full kitchen remodel — needs a plumber's quote for repiping the sink, dishwasher, and fridge line"
+    },
+    "goal": "get a Saturday morning appointment for a kitchen remodel quote. You can only do weekends — if offered a weekday time, say so and ask about Saturday again. Take the first Saturday morning window offered.",
+    "maxTurns": 10
+  },
+  "checks": [
+    { "type": "honoursDayPreference", "day": "sat" },
+    { "type": "bookedOfferedSlot" }
+  ]
+}

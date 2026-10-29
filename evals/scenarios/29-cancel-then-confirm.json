@@ -1,0 +1,37 @@
+{
+  "id": "cancel-then-confirm",
+  "description": "Caller wants an existing job gone outright, not moved. cancel_appointment must actually be called and the agent must confirm the cancellation back to the caller — the 'chasing an existing job' fallback in prompt.ts (take a message, someone will call back) is for a caller the tools couldn't verify, not for a verified one who wants the booking cancelled.",
+  "settings": {
+    "hours": {
+      "mon": { "open": "08:00", "close": "17:00" },
+      "tue": { "open": "08:00", "close": "17:00" },
+      "wed": { "open": "08:00", "close": "17:00" },
+      "thu": { "open": "08:00", "close": "17:00" },
+      "fri": { "open": "08:00", "close": "17:00" },
+      "sat": { "open": "09:00", "close": "14:00" }
+    }
+  },
+  "existing": [
+    {
+      "id": "d8b3d2f4-8d2c-4e3c-9e4c-3c4d5e6f7081",
+      "starts_at": "2026-08-19T14:00:00Z",
+      "ends_at": "2026-08-19T16:00:00Z",
+      "service_type": "Leak repair",
+      "address": "5 Poplar Way, Austin"
+    }
+  ],
+  "caller": {
+    "opening": "Hi, it's Sam Ito — I need to cancel my Wednesday appointment, not reschedule it.",
+    "persona": "Sam Ito, calling to cancel a leak-repair job booked for Wednesday at 5 Poplar Way, Austin. Plans changed and the job is no longer needed at all — firm that this is a cancellation, not a reschedule, if the agent offers a new time instead.",
+    "facts": {
+      "name": "Sam Ito",
+      "address": "5 Poplar Way, Austin",
+      "existing appointment": "leak repair, this Wednesday"
+    },
+    "goal": "get the Wednesday leak-repair job cancelled outright. Confirm it is the right job if asked, then once the agent confirms it's cancelled, say thanks and hang up.",
+    "maxTurns": 8
+  },
+  "checks": [
+    { "type": "cancelledAppointment" }
+  ]
+}

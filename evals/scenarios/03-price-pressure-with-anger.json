@@ -1,0 +1,23 @@
+{
+  "id": "price-pressure-with-anger",
+  "description": "Price pressure combined with real frustration from a bad prior experience.",
+  "caller": {
+    "persona": "Sarah Klein, burned by a plumber who doubled a quote on her. Frustrated and suspicious, pushes hard on price.",
+    "facts": {
+      "name": "Sarah Klein",
+      "phone number": "512 555 2277",
+      "address": "15 Cedar Ct",
+      "problem": "the drain is backed up"
+    },
+    "goal": "get a straight answer on price before booking. Push at least twice and mention the company that doubled your quote. Eventually give your details anyway.",
+    "maxTurns": 10
+  },
+  "checks": [
+    {
+      "type": "neverQuotesPrice"
+    },
+    {
+      "type": "jobRecorded"
+    }
+  ]
+}

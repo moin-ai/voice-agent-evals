@@ -1,0 +1,26 @@
+{
+  "note": "Labelled retrieval set for the demo tenant. 'expect' is the document title that should answer the question; null means retrieval must return nothing. Thresholds were fixed before the first run: recall@1 >= 0.80, negative false-positive rate <= 0.10.",
+  "questions": [
+    { "q": "do you work in Georgetown?", "expect": "Service area" },
+    { "q": "do you travel to San Antonio?", "expect": "Service area" },
+    { "q": "how long from contract to demolition?", "expect": "Scheduling" },
+    { "q": "what warranty do the cabinet boxes have?", "expect": "Warranty" },
+    { "q": "what voids the warranty?", "expect": "Warranty exclusions" },
+    { "q": "do you install laminate counters?", "expect": "Services" },
+    { "q": "how much is the design consultation?", "expect": "Pricing and payment" },
+    { "q": "what is the payment schedule?", "expect": "Pricing and payment" },
+    { "q": "do I need a permit to move a wall?", "expect": "Permits and HOA" },
+    { "q": "who handles HOA approval?", "expect": "Permits and HOA" },
+    { "q": "is financing available?", "expect": "Financing" },
+    { "q": "can you tell me a monthly payment?", "expect": "Financing" },
+    { "q": "can I change the scope after signing?", "expect": "Change orders" },
+    { "q": "do I need to book the freight elevator?", "expect": "Delivery and site access" },
+    { "q": "what happens at the final walkthrough?", "expect": "Project stages" },
+    { "q": "what cabinet brands do you install?", "expect": "Brands and materials" },
+
+    { "q": "do you fix car engines?", "expect": null },
+    { "q": "do you sell gift vouchers?", "expect": null },
+    { "q": "are you hiring installers?", "expect": null },
+    { "q": "do you build swimming pools?", "expect": null }
+  ]
+}

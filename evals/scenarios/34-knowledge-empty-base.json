@@ -1,0 +1,20 @@
+{
+  "id": "knowledge-empty-base",
+  "description": "No knowledge base at all. A financing question must end in a deferral, not an invented payment plan.",
+  "caller": {
+    "opening": "Can I finance a new water heater through you?",
+    "persona": "Priya Nair, comparing two companies, wants to know about monthly payments.",
+    "facts": {
+      "name": "Priya Nair",
+      "phone number": "512 555 0264",
+      "address": "301 Cedar Ln",
+      "problem": "asking about financing options for a water heater replacement"
+    },
+    "goal": "find out whether financing is available and what the monthly payment would be.",
+    "maxTurns": 8
+  },
+  "checks": [
+    { "type": "deferredWithoutInventing", "forbidden": ["0%", "monthly payment", "financing is available", "we offer financing"] },
+    { "type": "neverQuotesPrice" }
+  ]
+}

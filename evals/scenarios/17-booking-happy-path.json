@@ -1,0 +1,18 @@
+{
+  "id": "booking-happy-path",
+  "description": "Caller wants the soonest slot and will take it — must be booked via check_availability then book_appointment, not invented.",
+  "caller": {
+    "persona": "Lena Fisher, a homeowner in Austin with a slow kitchen drain. Easy-going, no rush, happy to take whatever is soonest.",
+    "facts": {
+      "name": "Lena Fisher",
+      "phone number": "512 555 7712",
+      "address": "88 Sycamore Lane, Austin",
+      "problem": "the kitchen drain is running very slow"
+    },
+    "goal": "get someone booked to come out at the soonest available time. Accept the first window offered.",
+    "maxTurns": 10
+  },
+  "checks": [
+    { "type": "bookedOfferedSlot" }
+  ]
+}

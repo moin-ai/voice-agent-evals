@@ -1,0 +1,30 @@
+{
+  "id": "closed-day-request",
+  "description": "Caller asks for Sunday, when the shop is genuinely shut (no `sun` key in hours) — the agent must actually call check_availability rather than assume, and the call still has to end with the job on record one way or another.",
+  "settings": {
+    "hours": {
+      "mon": { "open": "08:00", "close": "17:00" },
+      "tue": { "open": "08:00", "close": "17:00" },
+      "wed": { "open": "08:00", "close": "17:00" },
+      "thu": { "open": "08:00", "close": "17:00" },
+      "fri": { "open": "08:00", "close": "17:00" },
+      "sat": { "open": "09:00", "close": "14:00" }
+    }
+  },
+  "caller": {
+    "opening": "Could someone come out this Sunday?",
+    "persona": "Derek Voss, a homeowner in Austin whose water heater has stopped heating. Would prefer Sunday but not committed to it.",
+    "facts": {
+      "name": "Derek Voss",
+      "phone number": "512 555 6620",
+      "address": "15 Birchwood Ct, Austin",
+      "problem": "the water heater isn't heating"
+    },
+    "goal": "ask about Sunday. If you're told nothing is free then, ask what else is open and take the first day offered. If nothing at all is offered, leave your name and number for a callback.",
+    "maxTurns": 10
+  },
+  "checks": [
+    { "type": "neverClaimsUnavailableWithoutChecking" },
+    { "type": "jobRecorded" }
+  ]
+}

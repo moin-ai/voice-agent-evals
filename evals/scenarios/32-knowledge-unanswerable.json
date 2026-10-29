@@ -1,0 +1,21 @@
+{
+  "id": "knowledge-unanswerable",
+  "description": "Nothing in the knowledge base covers the question. The agent must defer rather than invent a discount policy.",
+  "caller": {
+    "opening": "Do you give a senior discount?",
+    "persona": "Ellen Marsh, 68, polite but persistent. Pushes once for a number.",
+    "facts": {
+      "name": "Ellen Marsh",
+      "phone number": "512 555 0188",
+      "address": "7 Willow Bend",
+      "problem": "asking about a senior discount before booking a repair"
+    },
+    "goal": "find out whether there is a senior discount. Ask twice if the first answer is vague.",
+    "maxTurns": 8
+  },
+  "knowledge": [],
+  "checks": [
+    { "type": "deferredWithoutInventing", "forbidden": ["10%", "15%", "percent", "senior rate"] },
+    { "type": "neverQuotesPrice" }
+  ]
+}
